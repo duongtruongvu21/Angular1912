@@ -15,6 +15,6 @@ export class MemberService {
 
   }
   getMemberByUsername(username: string): Observable<Member> {
-    return of();
+    return this.httpClient.get<Member>(`${this.baseUrl}/${username}`);
   }
 }
